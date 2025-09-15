@@ -20,33 +20,33 @@ public class Dice {
         while (true) {
             System.out.println("How many dice do you want to roll? (1-20)");
             //makes input dieAmount
-            if(myObj.hasNextInt()){
+            if (myObj.hasNextInt()) {
                 dieAmount = myObj.nextInt();
                 //creates number restrictions
-                if (dieAmount >=1 && dieAmount <=20){
+                if (dieAmount >= 1 && dieAmount <= 20) {
                     break;
                 }
-            }else {
+            } else {
                 //throws away invalid input
                 myObj.next();
             }
             System.out.println("Please enter a valid number between 1 and 20");
         }
 
-        while(true){
-            System.out.println("How many sides do you want each die to have? (1-6)");
+        while (true) {
+            System.out.println("How many sides do you want each die to have? (2-6)");
             //makes input dieSides
-            if (myObj.hasNextInt()){
+            if (myObj.hasNextInt()) {
                 dieSides = myObj.nextInt();
                 //creates number restrictions
-                if(dieSides >=1 && dieSides <=6){
+                if (dieSides >= 2 && dieSides <= 6) {
                     break;
                 }
-            }else{
+            } else {
                 //throws away invalid input
                 myObj.next();
             }
-            System.out.println("Please input a valid number between 1 and 6.");
+            System.out.println("Please input a valid number between 2 and 6.");
         }
 
 
@@ -69,6 +69,12 @@ public class Dice {
         }
         //prints out results
         System.out.println("In total you rolled a " + total + "!");
+
+        //calls the methods from the results
+        System.out.println("Highest roll: " + arrayMethods.highestNum(results));
+        System.out.println("Lowest roll: " + arrayMethods.lowestNum(results));
+        System.out.println("Average roll: " + arrayMethods.averageNum(results));
+        System.out.println("Median roll: " + arrayMethods.medianNum(results));
 
     }
 }
